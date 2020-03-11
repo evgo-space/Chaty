@@ -3,6 +3,9 @@ import java.util.regex.Pattern;
 import java.util.ArrayList;
 import java.util.List;
 
+// InputCortex is a modification of the cortex class with one main additional feature when there is a match.
+// InputCortex allows for specific user inputs to be parsed so the chatbot can either immediately reply with the parsed info or save it to memory
+// this is done with the getInput() function
 
 public class InputCortex extends Cortex {
 
@@ -37,6 +40,8 @@ public String chooseWordsWisely (){
     return response;
 }
 
+// getInput() takes the users input as a string, compares it with several other strings to locate the wanted substring contained in the 
+// users input, and then returns the substring to the ear method where it can be used immediately in a reply or saved to the chatbots memory(learn())
 @Override
 public String getInput(String s){
     if(s.contains("is")){

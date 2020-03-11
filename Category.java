@@ -1,9 +1,11 @@
 import java.util.ArrayList;
 
+// the category class is to simulate memory for the chatbot, every category object is identifiable with they key "type" parameter
+// so that the respective memory information can be accessed 
+// the chat bot is initialized with book information within the books array, memories created from user input is saved to the memory arraylist
 public class Category {
 
-
-    
+    //the chatbot is initialized with book memories
     public static Category sf = new Category("sci-fi", "Dune");
     public static Category f = new Category("fantasy", "Lord of the Rings");
     public static Category h = new Category("history", "A Distant Mirror");
@@ -25,10 +27,13 @@ public class Category {
         this.select = select;
     }
 
+    //this function allows the ear() method to pass new categories to be saved to the bots memory
+    // this takes places for InputCortex matches 
     public static void learn(Category c){
         memory.add(c);
     }
 
+    //the getCat() method is for searching the bots memory (ArrayList<Category>) and returning matched category information (select)
     public static String getCat(String s){
         String repl = "...On second thought I dont know...";
         for(int i = 0; i<memory.size(); i++){
@@ -39,6 +44,7 @@ public class Category {
         return repl;
     }
 
+    // this function is for searching the chatbots book memory
     public static String getBooks(String s){
         String ret = "The Bibl... just kidding thats way too long";
         for(Category c: books){

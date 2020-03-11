@@ -3,21 +3,24 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+// this is the class for the "chatbot" object, it contains methods to initialze the chatbot with pre-built canned responses for specific inputs,
+// as well as the fundemental ear() function which compares user inputs with pre-defined strings to select the correct response by interfacing with the other 
+//classes.
+
 public class Chatbot {
 
     private Cortex[] db;
     public static final String CONDITON_STRING = "<condition>";
+    //defres contains default responses in the event the users input does not have a match.
     String[] defres = {"thats crazy...", "okay...", "sorry what?..", "you know I dont speak spanish", "are you feeling okay?", "what do you want to talk about?"};
 
     public Chatbot(){
         fillVoc();
         Category zero = new Category("zero", "who am i");
-        Category.learn(zero);
-        //Category one = new Category("name", "bill");
-        //Category.learn(one);
-        
+        Category.learn(zero); 
     }
-
+    // here the cortex instance "db" is initialized with 20 cortex objects, each is a container for pre-defined inputs and their matching appropriate
+    // responses
     private void fillVoc(){
         db = new Cortex[20];
         int i = 0;
@@ -176,7 +179,11 @@ public class Chatbot {
 
      
     }
-
+    // ear() takes in the users input as a string and then passes it along to the cortex method wernicke() to attempt to find a match
+    // if a match is found, by utilizing the matching cortex instance, chooseWordsWisely() is called to get the respective response
+    //this is also where CONDITION_STRINGS are computed by calling the InputCortex method getInput() and the variation for stored book 
+    //information, the Category method getBooks()
+    //the learn() function is called to save CONDITION_STRING input to memory for the chatbot to use later
     public String ear(String s){
         int index = (int) (Math.random()*defres.length);
         String response = defres[index];
@@ -214,13 +221,7 @@ public class Chatbot {
 
 
 
-//for(Cortex neo: db){
-    //String temp = neo.wernicke(s);
-    //if(temp != null){
-        //response = neo.chooseWordsWisely();
-        //break;
-    //}
-//}
+
  
 
     

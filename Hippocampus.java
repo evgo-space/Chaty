@@ -3,6 +3,8 @@ import java.util.regex.Pattern;
 import java.util.ArrayList;
 import java.util.List;
 
+// Hippocampus class is a modification to the cortex object.
+// when an input matches with Hippocampus instance, previously saved user input information is prepared to be used in a response
 
 public class Hippocampus extends Cortex {
 
@@ -35,6 +37,10 @@ public String chooseWordsWisely (){
         response = super.speak[index];
     return response;
 }
+
+// the getInput() method in this class takes the users input and compares it against other pre-defined strings to later call the
+// correct category type, in doing so the appropriate information can be returned to form a "smart" response
+//eg if the users input contains "name", getInput() will call the getCat() method passing the category "name" so that "bob" will be returned.
 
 @Override
 public String getInput(String s){

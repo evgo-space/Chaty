@@ -2,6 +2,7 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+// main class acts as interface between program and user
 
 public class Chatroom {
 
@@ -20,12 +21,12 @@ public class Chatroom {
 
         System.out.println(":)");
 
+        // conversation is held within an infinite loop, call to ear("users input") gets chatbot's replies
         while (gate) {
             in = scan.nextLine();
             out = chbt.ear(in);
             System.out.println("\n");
             System.out.println("bot: " + out);
-            
             }
         }
 
