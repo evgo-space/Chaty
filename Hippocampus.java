@@ -44,8 +44,36 @@ public String getInput(String s){
     if(s.contains("who i am")){
         return Category.getCat("name");
     }
+    if(s.contains("recommend")){
+        return Category.getCat("book");
+    }
+    if(s.contains("recommendation")){
+        return Category.getCat("book");
+    }
+    if(s.contains("it")){ 
+        return Category.getCat("book");
+    }
+    if(s.contains("okay")){
+        return Category.getCat("memb");
+    }
+
+    if(s.contains("yes")){
+        return Category.getCat("memb");
+    }
+    if(s.contains("anyway")){
+        return Category.getCat("memb");
+    }
+    if(s.contains("sk")){
+        return Category.getCat("pref");
+    }
+    if(s.contains("questions")){
+        return Category.getCat("pref");
+    }
+    if(s.contains("bored")){
+        return Category.getCat("pref");
+    }
    
-    else{return "";}
+    else{return "Because I am not a sentient being I will never truly die";}
 }
 
 

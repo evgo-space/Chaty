@@ -23,7 +23,9 @@ public class Chatroom {
         while (gate) {
             in = scan.nextLine();
             out = chbt.ear(in);
-            System.out.println(out);
+            System.out.println("\n");
+            System.out.println("bot: " + out);
+            
             }
         }
 

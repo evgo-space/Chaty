@@ -49,6 +49,16 @@ public String getInput(String s){
         //Category cat = new Category("name", s.substring(s.lastIndexOf("am") + 2));
         //memory.add(cat);
     }
+    if(s.contains("ed")){
+        return s.substring(s.lastIndexOf("ed") + 2);
+        //Category cat = new Category("name", s.substring(s.lastIndexOf("am") + 2));
+        //memory.add(cat);
+    }
+    if(s.contains("ad")){
+        return s.substring(s.lastIndexOf("ad") + 2);
+        //Category cat = new Category("name", s.substring(s.lastIndexOf("am") + 2));
+        //memory.add(cat);
+    }
     if(s.contains("like")){
         return s.substring(s.lastIndexOf("ke") + 2);
     }
