@@ -1,7 +1,7 @@
 # Chaty
  chatbot project (cosc310)
 
-All code was developed and tested on the java 13.0.1 runtime environment.
+All code was developed and tested for the java 13.0.1 runtime environment.
 Java files should first be compiled on the users personal machine, once all the files have been compiled run the Chatroom.java file (this is the main class)
 
 For this project, we decided on building a chat bot (conversation agent) capable of talking to a user about books. Our goal is to produce a bot capable of sustaining a casual and informal conversation about books, while also upholding general conversation etiquette; in other words, a robot friend who might be able to recommend a good book! 
