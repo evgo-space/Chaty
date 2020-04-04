@@ -7,6 +7,7 @@ public class Client{
     private Socket socket = null;
     private DataInputStream input = null;
     private DataOutputStream out = null;
+    private DataInputStream inClient = null;
     
 public Client(String address, int port){
     try{
@@ -15,6 +16,10 @@ public Client(String address, int port){
 
         input = new DataInputStream(System.in);
         out = new DataOutputStream(socket.getOutputStream());
+
+        inClient = new DataInputStream(
+            new BufferedInputStream(socket.getInputStream())
+        );
     }
     catch(UnknownHostException u){
         System.out.println(u);
@@ -24,13 +29,17 @@ public Client(String address, int port){
     }
 
     String line = "";
+    String serverSay = "";
 
 
     while(!line.equals("Over")){
         try{
+            serverSay = inClient.readUTF();
+            System.out.println("server says: " + serverSay);
             
             line = input.readLine();
             out.writeUTF(line);
+            
         }
         catch(IOException i){
             System.out.println(i);
