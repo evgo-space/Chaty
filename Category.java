@@ -13,10 +13,16 @@ public class Category {
     public static Category c = new Category("classics", "Utopia by Thomas More");
     public static Category nf = new Category("non-fiction", "Silent Sping");
     public static Category fi = new Category("fiction", "Beware of Pity");
+
+    public static Category bb = new Category("basketball", "Lebron James is getting traded back to Cleveland");
+    public static Category ho = new Category("hockey", "Wayne Gretzky is coming out of retirement to play for Las Vegas");
+    public static Category so = new Category("soccer", "Christiano Ronaldo is donating is right leg to spaceX for research purposes");
+    public static Category fo = new Category("football", "the NFL is dropping its sports affilations to focus on their true passion...American Propaganda");
     
     
     public static ArrayList<Category> memory = new ArrayList<>();
     public static Category[] books = {sf, f, h, r, c, nf, fi};
+    public static Category[] sports = {bb,ho,so,fo};
     
     
     public String type = "";
@@ -48,6 +54,17 @@ public class Category {
     public static String getBooks(String s){
         String ret = "The Bibl... just kidding thats way too long";
         for(Category c: books){
+            if(c.type.equals(s)){
+                ret =  c.select;
+            }
+        }
+        return ret;
+    }
+
+    // this function is for searching the chatbots book memory
+    public static String getSports(String s){
+        String ret = "I have no real physical presence and sports are therefore to me nothing more than a hoop dream...";
+        for(Category c: sports){
             if(c.type.equals(s)){
                 ret =  c.select;
             }

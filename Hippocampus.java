@@ -51,13 +51,16 @@ public String getInput(String s){
         return Category.getCat("name");
     }
     if(s.contains("recommend")){
-        return Category.getCat("book");
+        return Category.getCat("books");
     }
     if(s.contains("recommendation")){
-        return Category.getCat("book");
+        return Category.getCat("books");
     }
     if(s.contains("it")){ 
-        return Category.getCat("book");
+        return Category.getCat("books");
+    }
+    if(s.contains("sure")){ 
+        return Category.getCat("books");
     }
     if(s.contains("okay")){
         return Category.getCat("memb");
@@ -69,6 +72,15 @@ public String getInput(String s){
     if(s.contains("anyway")){
         return Category.getCat("memb");
     }
+    if(s.contains("crazy")){
+        return Category.getCat("spmemb");
+    }
+    if(s.contains("way")){
+        return Category.getCat("spmemb");
+    }
+    if(s.contains("wow")){
+        return Category.getCat("spmemb");
+    }
     if(s.contains("sk")){
         return Category.getCat("pref");
     }
@@ -77,6 +89,9 @@ public String getInput(String s){
     }
     if(s.contains("bored")){
         return Category.getCat("pref");
+    }
+    if(s.contains("rumor")){
+        return Category.getCat("sport");
     }
    
     else{return "Because I am not a sentient being I will never truly die";}

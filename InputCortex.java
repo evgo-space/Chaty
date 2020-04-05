@@ -67,6 +67,9 @@ public String getInput(String s){
     if(s.contains("like")){
         return s.substring(s.lastIndexOf("ke") + 2);
     }
+    if(s.contains("the")){
+        return s.substring(s.lastIndexOf("the") + 2);
+    }
     else{return "";}
 }
 
