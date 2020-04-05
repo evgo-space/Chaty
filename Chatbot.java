@@ -151,7 +151,7 @@ public class Chatbot {
         {
             String[] hear = {"sci-fi", "fantasy", "history", "romantic", "classics", "non-fiction", "fiction"};
             String[] speak = {"me to, would you like a recommendation?", "to each their own... although I have a good recommendation"};
-            String cate = "books";
+            String cate = "book";
             InputCortex neo = new InputCortex(hear, speak, cate);
             db[i++] = neo;
         }
@@ -247,12 +247,12 @@ public class Chatbot {
                 response = neo.chooseWordsWisely();
                 response = response.replace(CONDITON_STRING, neo.getInput(s));
                 if(neo.cate != null){
-                    if(neo.cate.equals("books")){
+                    if(neo.cate.equals("book")){
                         String select = Category.getBooks(temp);
                         Category b = new Category(neo.cate, select);
                         Category.learn(b);
                     }
-                    if(neo.cate.equals("sport")){
+                    else if(neo.cate.equals("sport")){
                         String select = Category.getSports(temp);
                         Category b = new Category(neo.cate, select);
                         Category.learn(b);

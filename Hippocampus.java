@@ -51,17 +51,15 @@ public String getInput(String s){
         return Category.getCat("name");
     }
     if(s.contains("recommend")){
-        return Category.getCat("books");
+        return Category.getCat("book");
     }
     if(s.contains("recommendation")){
-        return Category.getCat("books");
+        return Category.getCat("book");
     }
     if(s.contains("it")){ 
-        return Category.getCat("books");
+        return Category.getCat("book");
     }
-    if(s.contains("sure")){ 
-        return Category.getCat("books");
-    }
+    
     if(s.contains("okay")){
         return Category.getCat("memb");
     }
