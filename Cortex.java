@@ -23,11 +23,28 @@ public Cortex(String[] hear, String[] speak){
 //method for matching user input with pre-defined inputs
 public String wernicke(String s){
     String strng = s.toLowerCase();
+
     for(int i = 0; i<hear.length; i++){
         String temp = hear[i];
+        System.out.println("shit " + temp);
+
             if(strng.contains(temp))
                 return temp;      
     }
+    // if no match is found, we then process the hear data and the user input data
+    // using the Porter Stemmer algorithm and by removing any and all punctuation
+    SpellCheck spell = new SpellCheck();
+    String cleanUserInput = spell.check(strng); 
+
+
+    for(int i = 0; i<hear.length; i++){
+        String temp = spell.check(hear[i]);
+        //System.out.println("fuck " + temp);
+            if(cleanUserInput.contains(temp))
+                return temp;      
+    }
+
+
     return null;
 }
 

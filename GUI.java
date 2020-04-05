@@ -1,70 +1,77 @@
- 
+
 import java.awt.*;
 import java.awt.event.*;
-import javax.swing.*;
+import java.util.concurrent.TimeUnit;
 
+import javax.swing.*;
 
 public class GUI {
 
     Chatbot chbt = new Chatbot();
-
+    private JLabel title = new JLabel("Chaty");
     private JTextArea ca = new JTextArea();
-    private JTextField chatbox = new JTextField(); 
+    private JTextField chatbox = new JTextField();
+    private JScrollPane scrollPane = new JScrollPane(ca);
 
+    public GUI() {
 
+        JFrame frame = new JFrame();
 
-    public GUI(){ 
+        /**
+         * JPanel jp = new JPanel(); JLabel jl = new JLabel(); JTextField jt = new
+         * JTextField(30); jp.add(jt);
+         * 
+         * jt.addActionListener(new ActionListener(){ public void
+         * actionPerformed(ActionEvent e){ String userInput = jt.getText();
+         * jl.setText(userInput); } });
+         * 
+         * jp.add(jl);
+         **/
 
-        JFrame frame = new JFrame(); 
-        /**JPanel jp = new JPanel(); 
-        JLabel jl = new JLabel();
-        JTextField jt = new JTextField(30);
-        jp.add(jt);
+        // jp.setBorder(BorderFactory.createEmptyBorder(30,30,10,30));
+        // jp.setLayout(new GridLayout(0,1));
 
-        jt.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent e){
-                String userInput = jt.getText();
-                jl.setText(userInput);
-            }
-        });
-
-        jp.add(jl);**/
-
-        //jp.setBorder(BorderFactory.createEmptyBorder(30,30,10,30));
-       // jp.setLayout(new GridLayout(0,1));
-
-        //frame.add(jp, BorderLayout.CENTER);
+        // frame.add(jp, BorderLayout.CENTER);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setTitle("Casual ChatBot");
-        frame.setSize(600,600);
-        //frame.pack();
+        frame.setSize(600, 600);
+        // frame.pack();
         frame.setVisible(true);
         frame.setResizable(false);
         frame.setLayout(null);
         frame.add(chatbox);
-        frame.add(ca);
+        frame.add(scrollPane);
+        frame.add(title);
 
-        //setting area
+        // setting position of the chat field
 
-        ca.setSize(500,400);
-        ca.setLocation(2, 2);
+        scrollPane.setSize(570, 450);
+        scrollPane.setLocation(15, 70);
 
-        // setting text area
+        // setting area of the input text field
 
-        chatbox.setSize(540,30);
-        chatbox.setLocation(2,500);
+        chatbox.setSize(540, 30);
+        chatbox.setLocation(30, 535);
+       
+        // setting the area of the title
 
+        title.setSize(200, 50);
+        title.setLocation(250, 10);
+        title.setFont(title.getFont().deriveFont(40f));
+        title.setForeground(Color.white);
 
-        
-        chatbox.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent e){
-                String userInput =chatbox.getText();
+        //setting the frame colour
+        frame.getContentPane().setBackground( Color.getHSBColor(170, 42, 76) );
+
+        chatbox.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                String userInput = chatbox.getText();
                 ca.append("You : " + userInput + "\n");
                 chatbox.setText("");
 
-                // the bot reply 
-
-                ca.append("ChatBot : " + chbt.ear(userInput) + "\n");
+                // the bot reply
+              
+                 ca.append("ChatBot : " + chbt.ear(userInput) + "\n");
 
             }
         });
