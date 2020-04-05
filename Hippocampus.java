@@ -12,9 +12,7 @@ public String cate;
      
 public Hippocampus(String[] hear, String[] speak){
    super(hear,speak);
-
 }
-
 
 
 //method for matching user input with correct bot output
@@ -25,8 +23,21 @@ public String wernicke(String s){
         String temp = super.hear[i];
             if(strng.contains(temp)){
                 return temp;
-            }      
+            }  
+
     }
+            
+            SpellCheck spell = new SpellCheck();
+            String cleanUserInput = spell.check(strng); 
+        
+        
+            for(int i = 0; i<hear.length; i++){
+                String temp = spell.check(hear[i]);
+                //System.out.println("fuck " + temp);
+                    if(cleanUserInput.contains(temp))
+                        return temp;      
+            }
+    
     return null;
 }
 
