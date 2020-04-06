@@ -26,7 +26,7 @@ public String wernicke(String s){
 
     for(int i = 0; i<hear.length; i++){
         String temp = hear[i];
-        System.out.println("shit " + temp);
+        //System.out.println("shit " + temp);
 
             if(strng.contains(temp))
                 return temp;      

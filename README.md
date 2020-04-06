@@ -22,6 +22,18 @@ Hippocampus: this is another extension of Cortex, and also facilitats CONDTION_S
 
 Category: this is a static class it simulates memory for the chatbot. It contains an array of book information as well as an arraylist for adding new memories (category objects). The chatbot object can call the static learn() function to add newly created categories to the chatbots repertoire.
 
+!!!!!!!!NEW ADDITIONS (UPDATE 1.1)!!!!!!!!!!!!!!!!
+
+Socket interface: We have implemented both a server and client class allowing the chatbot to connect via sockets with other chatbots or users. As it stands now the sockets connect to the local host, but the address can easily be reconfigured to allow remote connections. 
+
+GUI:
+
+OTHER FEATURES
+
+- We have added a second main topic to the chatbots repertoire. In addition to books the chatbot now has functionality to generate output based on sports. The sports vocabulary includes favourite sports and favourite teams plus insider “rumor” knowledge pertaining to the user’s favourite sport.
+- The chatbot can now recover from user input it doesn’t recognize by outputting over 5 different blanket statements to attempt to direct the conversation back onto point.
+
+
 
 
 

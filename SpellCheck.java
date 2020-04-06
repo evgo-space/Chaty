@@ -16,7 +16,7 @@ public class SpellCheck{
 
         //removing all punctuation from the string
         s = s.replaceAll("\\p{Punct}", "");
-        System.out.println(s);
+        //System.out.println(s);
 
         // creating our new stemming object 
         Stemmer stemmer = new Stemmer();
