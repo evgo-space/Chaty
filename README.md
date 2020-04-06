@@ -31,7 +31,9 @@ The program can now be run 1 of three ways: 1) as before through the main Chatro
 Socket interface: We have implemented both a server and client class allowing the chatbot to connect via sockets with other chatbots or users. As it stands now the sockets connect to the local host, but the address can easily be reconfigured to allow remote connections. 
 
 
-GUI:
+GUI: The GUI is our newest way of running the program. It creates a Chatbot object in the GUI class and allows users to interact with it in a GUI window. User input is entered through a JTextField while the Bot responses and conversation in full, is displayed in a JTextArea. The implementation of a Graphical User Interface significanlty improves the user experience and allows them to easily view the entirity of the conversation thanks to a scrollbar. 
+
+SpellCheck: The new SpellCheck class utilizes the Stemmer.java, a Porter Stemming algorithm, class and helps improve the programs ability to understand user input. User input is processed as a string, punctuation is removed, and all prefixes and suffixes are removed from the user's input and the Chatbots conversational queues. This is done to help increase the likelihood of a users input matching with the bot's conversation queues. 
 
 OTHER FEATURES
 
