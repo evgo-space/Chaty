@@ -24,6 +24,10 @@ Category: this is a static class it simulates memory for the chatbot. It contain
 
 !!!!!!!!NEW ADDITIONS (UPDATE 1.1)!!!!!!!!!!!!!!!!
 
+The program can now be run 1 of three ways: 1) as before through the main Chatroom.java class.
+                                            2) by running the Server.java file first then the Client.java file for socket interfacing.
+                                            3) by running the GUI.java file to run the chatbot through our new gui interface.
+
 Socket interface: We have implemented both a server and client class allowing the chatbot to connect via sockets with other chatbots or users. As it stands now the sockets connect to the local host, but the address can easily be reconfigured to allow remote connections. 
 
 GUI:
@@ -31,6 +35,7 @@ GUI:
 OTHER FEATURES
 
 - We have added a second main topic to the chatbots repertoire. In addition to books the chatbot now has functionality to generate output based on sports. The sports vocabulary includes favourite sports and favourite teams plus insider “rumor” knowledge pertaining to the user’s favourite sport.
+*note please see the chatbot.java file for list of well handled inputs ('hear' arrays).
 - The chatbot can now recover from user input it doesn’t recognize by outputting over 5 different blanket statements to attempt to direct the conversation back onto point.
 
 
