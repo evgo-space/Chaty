@@ -40,7 +40,7 @@ OTHER FEATURES
 - The chatbot can now recover from user input it doesn’t recognize by outputting over 5 different blanket statements to attempt to direct the conversation back onto point.
 
 
-*****see submitted pdf for images pertaining to new features********** 
+see submitted pdf for images pertaining to new features (under sample output) 
 
 
 
