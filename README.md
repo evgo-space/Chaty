@@ -30,6 +30,7 @@ The program can now be run 1 of three ways: 1) as before through the main Chatro
 
 Socket interface: We have implemented both a server and client class allowing the chatbot to connect via sockets with other chatbots or users. As it stands now the sockets connect to the local host, but the address can easily be reconfigured to allow remote connections. 
 
+
 GUI:
 
 OTHER FEATURES
@@ -39,7 +40,7 @@ OTHER FEATURES
 - The chatbot can now recover from user input it doesn’t recognize by outputting over 5 different blanket statements to attempt to direct the conversation back onto point.
 
 
-
+*****see submitted pdf for images pertaining to new features********** 
 
 
 
